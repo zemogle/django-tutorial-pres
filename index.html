@@ -74,6 +74,10 @@
                   <h2>Do you like using HTML templates?</h2>
                 </section>
 
+								<section>
+                  <h2>Do you like using RegEx to construct URLs?</h2>
+                </section>
+
                 <section data-background="http://i.giphy.com/tIeCLkB8geYtW.gif">
                 </section>
 
@@ -112,25 +116,55 @@
                   <section>
                   <h2>This is what you would normally do!</h2>
                   <pre><code class="hljs" data-trim contenteditable>
-                    $ cd ~
-                    $ django-admin startproject astropony
-                    $ cd astropony
+$ cd ~
+$ django-admin startproject astropony
+$ cd astropony
                   </code></pre>
+								</section>
+
                   <section>
                     <h2>But because time is short ...</h2>
                   <pre><code class="hljs" data-trim contenteditable>
-                    $ cd ~
-                    $ git clone https://github.com/zemogle/astropony.git
-                    $ cd astropony
+$ cd ~
+$ git clone https://github.com/zemogle/astropony.git
+$ cd astropony
                   </code></pre>
                 </section>
             </section>
 
+						<section>
+							<h2>Django Project Structure</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+	astropony/
+		manage.py
+		astropony/
+			__init__.py
+			settings.py
+			urls.py
+			wsgi.py
+		exoplanets/
+			__init__.py
+			admin.py
+			migrations/
+			models.py
+			templates/
+			tests.py
+			views.py
+						</code></pre>
+					</section>
 
+					<section>
+						<h2>The Magic</h2>
+						<pre><code class="hljs" data-trim>
+$ python manage.py runserver
+						</pre></code>
+						<p>Visit http://localhost:8000 in a browser</>
+
+<!-- LAST SLIDE -->
             <section>
               <h2>Want to know more?</h2>
               <ul>
-                <li>These notes, <a href="http://www.zemogle.uk/djangotutorial/">http://www.zemogle.uk/djangotutorial/</a></li>
+                <li>These notes, <a href="http://www.zemogle.uk/djangotutorial/">www.zemogle.uk/djangotutorial/</a></li>
                 <li>A more in-depth (and generally better) tutorial from <a href="http://tutorial.djangogirls.org">Django Girls</a></li>
                 <li>Speak to me @dotastro</li>
                 <li>Tweet me @zemogle</li>
