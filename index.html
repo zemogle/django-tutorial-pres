@@ -110,7 +110,7 @@ $ source dj/bin/activate
                     <p>If you use Anaconda</p>
                     <pre><code class="hljs" data-trim contenteditable>
 $ conda create -n dj python
-$ source dj activate
+$ source activate dj
                     </code></pre>
                   </section>
                   <section>
@@ -170,7 +170,6 @@ $ cd astropony
           <section>
             <h2>The Magic</h2>
             <pre><code class="hljs" data-trim>
-$ python manage.py migrate
 $ python manage.py runserver
             </pre></code>
             <p>Visit http://localhost:8000 in a browser</>
@@ -214,7 +213,7 @@ from django.shortcuts import render
 from .models import *
 
 def home(request):
-  no_exoplanets = Planet.objects.all().count()
+  no_exoplanets = Planet.objects.all().count() #Edit this function!
   return render(request,'exoplanets/index.html',{'no_exoplanets': no_exoplanets})
 
 def planets(request):
@@ -225,7 +224,7 @@ def planets(request):
           <section>
             <h2>Rendering Pages II</h2>
             <p><code>templates/index.html</code></p>
-            <pre><code class="hljs" data-trim>
+            <pre><code class="hljs" data-trim contenteditable>
   <h1>This is my exoplanet webpage</h1>
 
   {% if no_exoplanets %}
@@ -362,6 +361,10 @@ urlpatterns = [
 <p>Now visit <br/><code>http://localhost:8000/planet/1/update/</code></p>
           </section>
 
+        </section>
+
+        <section  data-background="http://i.giphy.com/PXzI5en3kTUKk.gif">
+          <h2 style="position: absolute;bottom: 0;left: 0;color:#fff;">Are we still friends?</h2>
         </section>
 <!-- LAST SLIDE -->
             <section>
