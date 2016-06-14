@@ -1,40 +1,40 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Snakes &amp; Ponies : What is Django and why do I like it?</title>
+    <title>Snakes &amp; Ponies : What is Django and why do I like it?</title>
 
-		<meta name="description" content="Snakes &amp; Ponies : What is Django and why do I like it?">
-		<meta name="author" content="Edward Gomez">
+    <meta name="description" content="Snakes &amp; Ponies : What is Django and why do I like it?">
+    <meta name="author" content="Edward Gomez">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
         <div class="reveal">
             <div class="slides">
                 <section style="width:100%;">
@@ -49,10 +49,15 @@
                 </section>
 
                 <section>
+                  <h2>Follow along at home</h2>
+                  <p><code>http://www.zemogle.uk/django-tutorial/</code></p>
+                </section>
+
+                <section>
                   <h2>What is Django?</h2>
                   <blockquote cite="http://djangoproject.com" style="width:100%!important">
-        						&ldquo;Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source. &rdquo;
-        					</blockquote>
+                    &ldquo;Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source. &rdquo;
+                  </blockquote>
                   <img src="images/Python-logo-notext.svg.png" style="border:none; box-shadow:none; background:none;  width:25%;"/>
                 </section>
 
@@ -74,7 +79,7 @@
                   <h2>Do you like using HTML templates?</h2>
                 </section>
 
-								<section>
+                <section>
                   <h2>Do you like using RegEx to construct URLs?</h2>
                 </section>
 
@@ -86,8 +91,9 @@
                   <h4>My assumptions</h4>
                   <ul>
                     <li class="fragment">You know what Python is</li>
-                    <li class="fragment">You are comfortable using command line</li>
-                    <li class="fragment">You are patient during live demos</li>
+                    <li class="fragment">You've experimented with HTML</li>
+                    <li class="fragment">You're comfortable using command line</li>
+                    <li class="fragment">You're patient during live demos</li>
                   </ul>
                 </section>
 
@@ -98,19 +104,19 @@
                   <section>
                     <h2>Virtual Environment [optional]</h2>
                     <pre><code class="hljs" data-trim contenteditable>
-                      $ virtualenv dj
-                      $ source dj/bin/activate
+$ virtualenv dj
+$ source dj/bin/activate
                     </code></pre>
                     <p>If you use Anaconda</p>
                     <pre><code class="hljs" data-trim contenteditable>
-                      $ conda create -n dj python
-                      $ source dj activate
+$ conda create -n dj python
+$ source dj activate
                     </code></pre>
                   </section>
                   <section>
                     <h2>Install Django</h2>
                     <pre><code class="hljs" data-trim contenteditable>
-                      $ pip install django
+$ pip install django
                     </code></pre>
                   </section>
                   <section>
@@ -120,11 +126,11 @@ $ cd ~
 $ django-admin startproject astropony
 $ cd astropony
                   </code></pre>
-								</section>
+                </section>
 
                   <section>
                     <h2>But because time is short ...</h2>
-                  <pre><code class="hljs" data-trim contenteditable>
+                  <pre><code class="hljs bash" data-trim contenteditable>
 $ cd ~
 $ git clone https://github.com/zemogle/astropony.git
 $ cd astropony
@@ -132,50 +138,259 @@ $ cd astropony
                 </section>
             </section>
 
-						<section>
-							<h2>Django Project Structure</h2>
-						<pre><code class="hljs" data-trim contenteditable>
-	astropony/
-		manage.py
-		astropony/
-			__init__.py
-			settings.py
-			urls.py
-			wsgi.py
-		exoplanets/
-			__init__.py
-			admin.py
-			migrations/
-			models.py
-			templates/
-			tests.py
-			views.py
-						</code></pre>
-					</section>
+            <section>
+              <h2>Django Project Structure</h2>
+            <pre><code class="hljs" data-trim contenteditable>
+  astropony
+  ├── README.md
+  ├── astropony
+  │   ├── __init__.py
+  │   ├── settings.py
+  │   ├── urls.py
+  │   └── wsgi.py
+  ├── db.sqlite3
+  ├── exoplanets
+  │   ├── __init__.py
+  │   ├── admin.py
+  │   ├── migrations
+  │   │   ├── 0001_initial.py
+  │   │   └── __init__.py
+  │   ├── models.py
+  │   ├── templates
+  │   │   └── exoplanets
+  │   │       ├── index.html
+  │   │       ├── planet.html
+  │   │       └── planets.html
+  │   ├── tests.py
+  │   └── views.py
+  └── manage.py
+            </code></pre>
+          </section>
 
-					<section>
-						<h2>The Magic</h2>
-						<pre><code class="hljs" data-trim>
+          <section>
+            <h2>The Magic</h2>
+            <pre><code class="hljs" data-trim>
+$ python manage.py migrate
 $ python manage.py runserver
-						</pre></code>
-						<p>Visit http://localhost:8000 in a browser</>
+            </pre></code>
+            <p>Visit http://localhost:8000 in a browser</>
+          </section>
 
+          <section>
+            <h2>DB structure</h2>
+            <p><code>models.py</code></p>
+            <pre><code class="hljs" data-trim>
+from django.db import models
+
+class Planet(models.Model):
+    name = models.CharField(max_length=200)
+    discovery_date = models.DateTimeField('date discovered')
+    mass = models.FloatField(default=10)
+    radius = models.FloatField()
+    misson = models.ForeignKey(Mission)
+
+    def __unicode__(self):
+      return self.name
+
+class Mission(models.Model):
+    name = models.CharField(max_length=200)
+    start_date = models.DateTimeField('date discovered')
+
+    def __unicode__(self):
+      return self.name
+                  </pre></code>
+            <ul>
+              <li>Helper classes</li>
+              <li>Links between model classes</li>
+            </ul>
+          </section>
+
+          <section>
+            <section>
+            <h2>Rendering Pages I</h2>
+            <p><code>views.py</code></p>
+            <pre><code class="hljs" data-trim>
+from django.shortcuts import render
+from .models import *
+
+def home(request):
+  no_exoplanets = Planet.objects.all().count()
+  return render(request,'exoplanets/index.html',{'no_exoplanets': no_exoplanets})
+
+def planets(request):
+  planets = Planet.objects.all()
+  return render(request,'exoplanets/planets.html',{'planets':planets})</pre></code>
+          </section>
+
+          <section>
+            <h2>Rendering Pages II</h2>
+            <p><code>templates/index.html</code></p>
+            <pre><code class="hljs" data-trim>
+  <h1>This is my exoplanet webpage</h1>
+
+  {% if no_exoplanets %}
+  <p>We have {{no_exoplanets}} exoplanets in the database</p>
+  {% else %}
+  <p>No exoplanets have been found yet. We live in 1991.</p>
+  {% endif %}
+</pre></code>
+<ul>
+  <li>Templates can reference each other.</li>
+  <li>Django can pass variables and perform simple logic in templates.</li>
+</ul>
+            </section>
+          </section>
+
+          <section>
+            <section>
+            <h2>Admin website</h2>
+            <p>You get this for free.</p>
+            <pre><code class="hljs" data-trim>
+$ python manage.py createsuperuser
+</pre></code>
+<p><code>http://localhost:8000/admin/</code></p>
+            </section>
+            <section>
+              <h2>Register models</h2>
+              <p>To see models in the admin site, register them in <code>admin.py</code></p>
+              <pre><code class="hljs python" data-trim>
+admin.site.register(Planet)
+admin.site.register(Mission)
+              </code></pre>
+            </section>
+          </section>
+
+          <section id="generic">
+            <section>
+            <h2>Generic Views I</h2>
+            <p>Editing database models made simple</p>
+            <p>open <code>exoplanet/views.py</code></p>
+            <pre><code class="hljs python" data-trim>
+from django.views.generic.detail import DetailView
+
+class PlanetDetails(DetailView):
+    model = Planet
+    template_name = 'exoplanets/planet.html'
+            </pre></code>
+          </section>
+            <section>
+              <h2>Generic Views II</h2>
+              <p>Look at <br/><code>exoplanets/templates/exoplanets/planet.html</code></p>
+              <pre><code class="hljs" data-trim>
+<h1>{{planet.name}}</h1>
+<table>
+  <tr>
+    <td>Mass</td>
+    <td>{{planet.mass}}</td>
+  </tr>
+    <tr>
+    <td>Radius</td>
+    <td>{{planet.radius}}</td>
+  </tr>
+</table>
+<p>It is {% now "jS F Y H:i" %}</p>
+              </pre></code>
+              <ul>
+                <li>Render variables</li>
+                <li><a href="https://docs.djangoproject.com/en/1.9/ref/templates/builtins/">Built-in template tags</a>.</li>
+                <li>Logic and looping</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Generic Views III</h2>
+              <p><code>astropony/urls.py</code></p>
+              <p>Let's hook up our new generic views.py</p>
+              <pre style="width:100%;"><code class="hljs python" data-trim>
+from exoplanets.views import home, planets, PlanetDetails
+
+  urlpatterns = [
+      # Examples:
+      url(r'^$', home, name='home'),
+      url(r'^planets/$', planets, name='home'),
+      url(r'^planet/(?P&lt;pk&gt;[0-9]+)/$', PlanetDetails.as_view(), name="planet_detail" ),
+
+      url(r'^admin/', include(admin.site.urls)),
+  ]</pre></code>
+  <p>Now visit <br/><code>http://localhost:8000/planet/1/</code></p>
+            </section>
+
+          <section>
+            <h2>Generic Views IV</h2>
+            <p>Let's update our database entries</p>
+            <p>open <code>exoplanet/views.py</code></p>
+            <pre><code class="hljs" data-trim>
+from django.views.generic.edit import UpdateView
+
+class PlanetUpdate(UpdateView):
+    model = Planet
+    fields = ['name']
+    template_name = 'exoplanets/planet_update.html'
+    success_url = '/'
+            </pre></code>
+          </section>
+
+          <section>
+            <h2>Generic Views V</h2>
+            <p>Create a new template file<br/>
+              <code>exoplanets/templates/exoplanets/planet_update.html</code>
+            </p>
+            <pre><code class="hljs" data-trim>
+<form action="" method="post">
+  {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+</form>
+            </pre></code>
+          </section>
+
+          <section>
+            <h2>Generic Views VI</h2>
+            <p><code>astropony/urls.py</code></p>
+            <p>Let's hook up our update generic view.</p>
+            <pre style="width:100%;"><code class="hljs python" data-trim>
+from exoplanets.views import home, planets, PlanetDetails, PlanetUpdate
+
+urlpatterns = [
+    # Examples:
+    url(r'^$', home, name='home'),
+    url(r'^planets/$', planets, name='home'),
+    url(r'^planet/(?P&lt;pk&gt;[0-9]+)/$', PlanetDetails.as_view(), name="planet_detail" ),
+    url(r'^planet/(?P&lt;pk&gt;[0-9]+)/update/$', PlanetUpdate.as_view(), name="update_planet" ),
+
+    url(r'^admin/', include(admin.site.urls)),
+]</pre></code>
+<p>Now visit <br/><code>http://localhost:8000/planet/1/update/</code></p>
+          </section>
+
+        </section>
 <!-- LAST SLIDE -->
             <section>
               <h2>Want to know more?</h2>
               <ul>
-                <li>These notes, <a href="http://www.zemogle.uk/djangotutorial/">www.zemogle.uk/djangotutorial/</a></li>
+                <li>These notes, <code><a href="http://www.zemogle.uk/django-tutorial/">www.zemogle.uk/django-tutorial/</a></code></li>
                 <li>A more in-depth (and generally better) tutorial from <a href="http://tutorial.djangogirls.org">Django Girls</a></li>
-                <li>Speak to me @dotastro</li>
+                <li>Speak to me.</li>
                 <li>Tweet me @zemogle</li>
               <ul>
             </section>
 
             </div>
         </div>
+        <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.js"></script>
         <script>
-            Reveal.initialize();
+            // Required, even if empty.
+            Reveal.initialize({
+                dependencies: [
+            // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <code> elements
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+
+            ]
+            });
         </script>
     </body>
 </html>
